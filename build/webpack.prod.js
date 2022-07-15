@@ -15,25 +15,6 @@ module.exports = webpackMerge.merge(common, {
     module: {
         rules: [
             {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader',
-                    },
-                ],
-            },
-            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {},
-                    },
-                ],
-            },
-            {
                 test: /\.css$/,
                 use: [
                     {
