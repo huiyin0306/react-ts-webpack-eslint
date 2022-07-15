@@ -5,6 +5,7 @@ const common = require('./webpack.common.js');
 module.exports = webpackMerge.merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
+    target: 'web',
     module: {
         rules: [
             {
@@ -18,6 +19,7 @@ module.exports = webpackMerge.merge(common, {
             directory: path.join(__dirname, '../dist'),
         },
         compress: true,
+        host: 'localhost',
         port: 8080,
         open: true,
         hot: true,

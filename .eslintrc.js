@@ -6,7 +6,7 @@ module.exports = {
         'prettier',
     ],
     parserOptions: {
-        ecmaVersion: 2018, // 允许解析最新的 ECMAScript 特性
+        ecmaVersion: 2022, // 允许解析最新的 ECMAScript 特性
         sourceType: 'module', // 允许使用 import
         ecmaFeatures: {
             jsx: true, // 允许对JSX进行解析
