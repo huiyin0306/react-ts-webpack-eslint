@@ -5,6 +5,33 @@ const common = require('./webpack.common.js');
 module.exports = webpackMerge.merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                    },
+                ],
+            },
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {},
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', { loader: 'css-loader', options: { url: false } }],
+            },
+        ],
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, '../dist'),

@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA;IACI,8BAA8B;AAClC,C","sources":["webpack://week3/./src/app.css"],"sourcesContent":["body{\r\n    background-color: antiquewhite;\r\n}"],"names":[],"sourceRoot":""}
