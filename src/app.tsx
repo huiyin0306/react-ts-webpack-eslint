@@ -8,7 +8,7 @@ const Hello: FC<{ title: string }> = ({ title }) => {
     return (
         <h1>
             <img src={logo} />
-            {title}sss
+            {title}sssd
         </h1>
     );
 };
