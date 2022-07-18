@@ -12,6 +12,10 @@ module.exports = webpackMerge.merge(common, {
                 test: /\.css$/,
                 use: ['style-loader', { loader: 'css-loader', options: { url: false } }],
             },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
         ],
     },
     devServer: {
@@ -25,7 +29,7 @@ module.exports = webpackMerge.merge(common, {
         hot: true,
         devMiddleware: {
             writeToDisk: (filename) => {
-                return /bundle.js/.test(filename);
+                return /main.js/.test(filename);
             },
         },
     },

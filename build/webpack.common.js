@@ -3,11 +3,16 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/app.tsx',
+    performance: {
+        maxAssetSize: 10000000,
+        maxEntrypointSize: 10000000,
+    },
+    entry: './src/index.tsx',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),
         publicPath: './',
+        chunkFilename: '[name].[chunkhash:5].chunk.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -44,5 +49,8 @@ module.exports = {
                 ],
             },
         ],
+    },
+    devServer: {
+        historyApiFallback: true,
     },
 };

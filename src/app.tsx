@@ -1,16 +1,16 @@
-import React, { FC, ReactElement } from 'react';
-import ReactDom from 'react-dom';
-import logo from './pictures/logo.png';
+import React from 'react';
+import { Button } from 'antd';
 
-import './app.css';
+import logo from './assets/pictures/logo.png';
 
-const Hello: FC<{ title: string }> = ({ title }): ReactElement => {
+import './app.less';
+
+export default function App() {
     return (
-        <h1>
+        <div>
             <img src={logo} />
-            {title}sssd
-        </h1>
+            eeeeee
+            <Button type="primary">Button</Button>
+        </div>
     );
-};
-
-ReactDom.render(<Hello title="Hello world" />, document.querySelector('#root'));
+}
